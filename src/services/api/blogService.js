@@ -260,7 +260,7 @@ export const blogService = {
       }
 
       return false;
-    } catch (error) {
+} catch (error) {
       if (error?.response?.data?.message) {
         console.error("Error deleting blog post:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
@@ -269,7 +269,6 @@ export const blogService = {
         toast.error("블로그 포스트 삭제 중 오류가 발생했습니다");
       }
       return false;
-return false;
     }
   }
 };
