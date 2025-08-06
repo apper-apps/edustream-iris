@@ -96,13 +96,13 @@ const VideoPlayerPage = () => {
             </div>
 
             {/* Video Player */}
-            <div className="mb-8">
+<div className="mb-8">
               <VideoPlayer 
                 videoUrl={currentLecture?.videoUrl}
                 title={currentLecture?.title}
+                description={currentLecture?.description}
               />
             </div>
-
             {/* Lecture Info & Controls */}
             {currentLecture && (
               <div className="bg-white rounded-lg p-6 shadow-sm">
