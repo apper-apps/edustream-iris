@@ -257,10 +257,10 @@ export const blogService = {
           toast.success("블로그 포스트가 성공적으로 삭제되었습니다");
           return true;
         }
-      }
+}
 
       return false;
-} catch (error) {
+    } catch (error) {
       if (error?.response?.data?.message) {
         console.error("Error deleting blog post:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
