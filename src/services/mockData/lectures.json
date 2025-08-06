@@ -1,0 +1,194 @@
+[
+  {
+    "Id": 1,
+    "courseId": 1,
+    "title": "React 소개와 개발환경 설정",
+    "videoUrl": "https://www.youtube.com/embed/dGcsHMXbSOA",
+    "duration": 45,
+    "order": 1
+  },
+  {
+    "Id": 2,
+    "courseId": 1,
+    "title": "JSX와 컴포넌트 기초",
+    "videoUrl": "https://www.youtube.com/embed/SqcY0GlETPk",
+    "duration": 60,
+    "order": 2
+  },
+  {
+    "Id": 3,
+    "courseId": 1,
+    "title": "Props와 State 이해하기",
+    "videoUrl": "https://www.youtube.com/embed/IYvD9oBCuJI",
+    "duration": 55,
+    "order": 3
+  },
+  {
+    "Id": 4,
+    "courseId": 1,
+    "title": "이벤트 처리와 조건부 렌더링",
+    "videoUrl": "https://www.youtube.com/embed/7o5FPFtTOa0",
+    "duration": 50,
+    "order": 4
+  },
+  {
+    "Id": 5,
+    "courseId": 1,
+    "title": "리스트와 키(Keys)",
+    "videoUrl": "https://www.youtube.com/embed/0sasRxl35_8",
+    "duration": 40,
+    "order": 5
+  },
+  {
+    "Id": 6,
+    "courseId": 1,
+    "title": "React Hooks - useState",
+    "videoUrl": "https://www.youtube.com/embed/O6P86uwfdR0",
+    "duration": 65,
+    "order": 6
+  },
+  {
+    "Id": 7,
+    "courseId": 1,
+    "title": "React Hooks - useEffect",
+    "videoUrl": "https://www.youtube.com/embed/0ZJgIjIuY7U",
+    "duration": 70,
+    "order": 7
+  },
+  {
+    "Id": 8,
+    "courseId": 1,
+    "title": "Context API와 상태 관리",
+    "videoUrl": "https://www.youtube.com/embed/35lXWvCuM8o",
+    "duration": 80,
+    "order": 8
+  },
+  {
+    "Id": 9,
+    "courseId": 1,
+    "title": "React Router로 SPA 구현하기",
+    "videoUrl": "https://www.youtube.com/embed/Law7wfdg_ls",
+    "duration": 75,
+    "order": 9
+  },
+  {
+    "Id": 10,
+    "courseId": 1,
+    "title": "성능 최적화 - React.memo와 useMemo",
+    "videoUrl": "https://www.youtube.com/embed/THL1OPn72vo",
+    "duration": 85,
+    "order": 10
+  },
+  {
+    "Id": 11,
+    "courseId": 1,
+    "title": "실전 프로젝트 - Todo 앱 만들기",
+    "videoUrl": "https://www.youtube.com/embed/hQAHSlTtcmY",
+    "duration": 120,
+    "order": 11
+  },
+  {
+    "Id": 12,
+    "courseId": 1,
+    "title": "배포와 운영",
+    "videoUrl": "https://www.youtube.com/embed/xxma6jlUESM",
+    "duration": 60,
+    "order": 12
+  },
+  {
+    "Id": 13,
+    "courseId": 2,
+    "title": "TypeScript 기본 타입 시스템",
+    "videoUrl": "https://www.youtube.com/embed/BwuLxPH8IDs",
+    "duration": 50,
+    "order": 1
+  },
+  {
+    "Id": 14,
+    "courseId": 2,
+    "title": "인터페이스와 타입 별칭",
+    "videoUrl": "https://www.youtube.com/embed/1jw9QJbjCWs",
+    "duration": 55,
+    "order": 2
+  },
+  {
+    "Id": 15,
+    "courseId": 2,
+    "title": "제네릭 활용하기",
+    "videoUrl": "https://www.youtube.com/embed/nePDL5lQSE4",
+    "duration": 65,
+    "order": 3
+  },
+  {
+    "Id": 16,
+    "courseId": 2,
+    "title": "고급 타입과 유틸리티 타입",
+    "videoUrl": "https://www.youtube.com/embed/Fgcu_iB2X04",
+    "duration": 70,
+    "order": 4
+  },
+  {
+    "Id": 17,
+    "courseId": 2,
+    "title": "데코레이터 패턴 구현",
+    "videoUrl": "https://www.youtube.com/embed/O_lyavc0lJc",
+    "duration": 60,
+    "order": 5
+  },
+  {
+    "Id": 18,
+    "courseId": 2,
+    "title": "React with TypeScript 실전",
+    "videoUrl": "https://www.youtube.com/embed/Z5iWr6Srsj8",
+    "duration": 90,
+    "order": 6
+  },
+  {
+    "Id": 19,
+    "courseId": 3,
+    "title": "디자인 시스템 개념과 중요성",
+    "videoUrl": "https://www.youtube.com/embed/YiLUYf4HDh4",
+    "duration": 40,
+    "order": 1
+  },
+  {
+    "Id": 20,
+    "courseId": 3,
+    "title": "컬러 시스템 구축하기",
+    "videoUrl": "https://www.youtube.com/embed/9z2qwXTX46w",
+    "duration": 50,
+    "order": 2
+  },
+  {
+    "Id": 21,
+    "courseId": 3,
+    "title": "타이포그래피 가이드라인",
+    "videoUrl": "https://www.youtube.com/embed/sByzHoiYFX0",
+    "duration": 45,
+    "order": 3
+  },
+  {
+    "Id": 22,
+    "courseId": 3,
+    "title": "컴포넌트 라이브러리 구축",
+    "videoUrl": "https://www.youtube.com/embed/b2pfWq6HG4k",
+    "duration": 75,
+    "order": 4
+  },
+  {
+    "Id": 23,
+    "courseId": 3,
+    "title": "Figma를 활용한 디자인 토큰",
+    "videoUrl": "https://www.youtube.com/embed/Ka1I5TphDb8",
+    "duration": 65,
+    "order": 5
+  },
+  {
+    "Id": 24,
+    "courseId": 3,
+    "title": "개발팀과의 협업 프로세스",
+    "videoUrl": "https://www.youtube.com/embed/rJjaqSTzOxw",
+    "duration": 55,
+    "order": 6
+  }
+]
