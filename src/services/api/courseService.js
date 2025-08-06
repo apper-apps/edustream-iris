@@ -1,4 +1,5 @@
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
+import React from "react";
 
 export const courseService = {
   async getAll() {
@@ -33,6 +34,13 @@ export const courseService = {
 
       return response.data || [];
     } catch (error) {
+// Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error("Error fetching courses:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
@@ -74,19 +82,25 @@ export const courseService = {
         return null;
       }
 
-      return response.data;
+return response.data;
     } catch (error) {
+      // Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error(`Error fetching course with ID ${id}:`, error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
       } else {
         console.error(error.message);
         toast.error("강의를 가져오는 중 오류가 발생했습니다");
-      }
+}
       return null;
     }
   },
-
   async getByAccessLevel(accessLevel) {
     try {
       const { ApperClient } = window.ApperSDK;
@@ -126,7 +140,14 @@ export const courseService = {
       }
 
       return response.data || [];
-    } catch (error) {
+} catch (error) {
+      // Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error("Error fetching courses by access level:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
@@ -193,7 +214,14 @@ export const courseService = {
       }
 
       return null;
-    } catch (error) {
+} catch (error) {
+      // Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error("Error creating course:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
@@ -262,6 +290,13 @@ export const courseService = {
 
       return null;
     } catch (error) {
+// Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error("Error updating course:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
@@ -312,7 +347,14 @@ export const courseService = {
       }
 
       return false;
-    } catch (error) {
+} catch (error) {
+      // Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error("Error deleting course:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);

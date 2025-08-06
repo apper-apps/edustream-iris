@@ -37,7 +37,14 @@ export const blogService = {
       }
 
       return response.data || [];
-    } catch (error) {
+} catch (error) {
+      // Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error("Error fetching blog posts:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
@@ -79,6 +86,13 @@ export const blogService = {
 
       return response.data;
     } catch (error) {
+// Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error(`Error fetching blog post with ID ${id}:`, error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
@@ -144,6 +158,13 @@ export const blogService = {
 
       return null;
     } catch (error) {
+// Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error("Error creating blog post:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
@@ -209,7 +230,14 @@ export const blogService = {
       }
 
       return null;
-    } catch (error) {
+} catch (error) {
+      // Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error("Error updating blog post:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
@@ -260,7 +288,14 @@ export const blogService = {
 }
 
       return false;
-    } catch (error) {
+} catch (error) {
+      // Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error("Error deleting blog post:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);

@@ -30,6 +30,13 @@ export const lectureService = {
 
       return response.data || [];
     } catch (error) {
+// Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error("Error fetching lectures:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
@@ -70,6 +77,13 @@ export const lectureService = {
 
       return response.data;
     } catch (error) {
+// Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error(`Error fetching lecture with ID ${id}:`, error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
@@ -123,7 +137,14 @@ export const lectureService = {
       }
 
       return response.data || [];
-    } catch (error) {
+} catch (error) {
+      // Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error("Error fetching lectures by course ID:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
@@ -192,7 +213,14 @@ export const lectureService = {
       }
 
       return null;
-    } catch (error) {
+} catch (error) {
+      // Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error("Error creating lecture:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
@@ -262,7 +290,14 @@ export const lectureService = {
       }
 
       return null;
-    } catch (error) {
+} catch (error) {
+      // Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error("Error updating lecture:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
@@ -318,7 +353,14 @@ export const lectureService = {
       }
 
       return false;
-    } catch (error) {
+} catch (error) {
+      // Initialize ApperClient for error context
+      const { ApperClient } = window.ApperSDK;
+      const apperClient = new ApperClient({
+        apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+        apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+      });
+      
       if (error?.response?.data?.message) {
         console.error("Error deleting lecture:", error?.response?.data?.message);
         toast.error(error?.response?.data?.message);
