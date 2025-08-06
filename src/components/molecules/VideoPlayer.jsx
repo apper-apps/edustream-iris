@@ -11,10 +11,9 @@ const VideoPlayer = ({ videoUrl, title, description }) => {
   const detectVideoInfo = (url) => {
     if (!url) return { embedUrl: '', platform: '', videoId: '' };
 
-    // YouTube URL patterns
-    const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+// YouTube URL patterns
+    const youtubeRegex = /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\//|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/;
     const youtubeMatch = url.match(youtubeRegex);
-    
     if (youtubeMatch) {
       const videoId = youtubeMatch[1];
       return {
