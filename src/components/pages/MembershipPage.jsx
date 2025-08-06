@@ -22,9 +22,9 @@ const MembershipPage = () => {
   const [refreshKey, setRefreshKey] = useState(0);
 
   // Convert YouTube/Vimeo URLs to embed format
-  const convertToEmbedUrl = (url) => {
+const convertToEmbedUrl = (url) => {
     // YouTube URL patterns
-    const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+    const youtubeRegex = /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/;
     const youtubeMatch = url.match(youtubeRegex);
     if (youtubeMatch) {
       return `https://www.youtube.com/embed/${youtubeMatch[1]}`;
