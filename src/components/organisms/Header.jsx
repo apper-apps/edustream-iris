@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from 'react-redux';
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
+import { AuthContext } from "../../App";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { logout } = useContext(AuthContext);
+  const { user, isAuthenticated } = useSelector((state) => state.user);
 
   const navigation = [
     { name: "홈", href: "/" },
@@ -54,14 +58,28 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Desktop Actions */}
+{/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm">
-              로그인
-            </Button>
-            <Button size="sm">
-              무료 체험
-            </Button>
+            {isAuthenticated ? (
+              <>
+                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <ApperIcon name="User" size={16} />
+                  <span>{user?.firstName || user?.emailAddress || '사용자'}</span>
+                </div>
+                <Button variant="outline" size="sm" onClick={logout}>
+                  로그아웃
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button variant="outline" size="sm">
+                  <Link to="/login">로그인</Link>
+                </Button>
+                <Button size="sm">
+                  <Link to="/signup">무료 체험</Link>
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -94,13 +112,27 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <div className="flex flex-col space-y-2 px-3 py-2">
-                <Button variant="outline" size="sm" className="w-full">
-                  로그인
-                </Button>
-                <Button size="sm" className="w-full">
-                  무료 체험
-                </Button>
+<div className="flex flex-col space-y-2 px-3 py-2">
+                {isAuthenticated ? (
+                  <>
+                    <div className="flex items-center space-x-2 px-3 py-2 text-sm text-gray-600">
+                      <ApperIcon name="User" size={16} />
+                      <span>{user?.firstName || user?.emailAddress || '사용자'}</span>
+                    </div>
+                    <Button variant="outline" size="sm" className="w-full" onClick={logout}>
+                      로그아웃
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Button variant="outline" size="sm" className="w-full">
+                      <Link to="/login">로그인</Link>
+                    </Button>
+                    <Button size="sm" className="w-full">
+                      <Link to="/signup">무료 체험</Link>
+                    </Button>
+                  </>
+                )}
               </div>
             </div>
           </div>
