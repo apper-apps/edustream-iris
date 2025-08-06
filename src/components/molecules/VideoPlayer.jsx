@@ -12,7 +12,7 @@ const VideoPlayer = ({ videoUrl, title, description }) => {
     if (!url) return { embedUrl: '', platform: '', videoId: '' };
 
 // YouTube URL patterns
-    const youtubeRegex = /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\//|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/;
+    const youtubeRegex = /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/;
     const youtubeMatch = url.match(youtubeRegex);
     if (youtubeMatch) {
       const videoId = youtubeMatch[1];
