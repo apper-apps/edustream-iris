@@ -1,5 +1,4 @@
 import lecturesMockData from "@/services/mockData/lectures.json";
-
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 export const lectureService = {
@@ -24,9 +23,11 @@ export const lectureService = {
       .sort((a, b) => a.order - b.order)
       .map(lecture => ({ ...lecture }));
   },
-
-  async create(lectureData) {
+async create(lectureData) {
     await delay(400);
+    if (!lectureData.title || !lectureData.videoUrl) {
+      throw new Error("제목과 동영상 URL은 필수입니다");
+    }
     const maxId = Math.max(...lecturesMockData.map(l => l.Id), 0);
     const newLecture = {
       Id: maxId + 1,
@@ -35,25 +36,39 @@ export const lectureService = {
     lecturesMockData.push(newLecture);
     return { ...newLecture };
   },
-
-  async update(id, lectureData) {
+async update(id, lectureData) {
     await delay(400);
+    if (typeof id !== 'number') {
+      throw new Error("유효하지 않은 강의 ID입니다");
+    }
+    
     const index = lecturesMockData.findIndex(lecture => lecture.Id === id);
     if (index === -1) {
       throw new Error("강의를 찾을 수 없습니다");
     }
-    lecturesMockData[index] = { ...lecturesMockData[index], ...lectureData };
+    
+    lecturesMockData[index] = { 
+      ...lecturesMockData[index], 
+      ...lectureData,
+      Id: id // ID는 변경되지 않도록 보장
+    };
     return { ...lecturesMockData[index] };
   },
 
   async delete(id) {
     await delay(300);
+    
+    if (typeof id !== 'number') {
+      throw new Error("유효하지 않은 강의 ID입니다");
+    }
+    
     const index = lecturesMockData.findIndex(lecture => lecture.Id === id);
     if (index === -1) {
       throw new Error("강의를 찾을 수 없습니다");
     }
+    
     const deletedLecture = { ...lecturesMockData[index] };
     lecturesMockData.splice(index, 1);
     return deletedLecture;
-  }
+}
 };
