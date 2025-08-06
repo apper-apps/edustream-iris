@@ -22,9 +22,9 @@ const VideoPlayer = ({ videoUrl, title, description }) => {
         platform: 'youtube',
         videoId
       };
-    }
+}
 // Vimeo URL patterns
-    const vimeoRegex = /(?:vimeo\.com\/)(?:.*#|.*/)?([0-9]+)/;
+    const vimeoRegex = /(?:vimeo\.com\/)(?:.*#|.*\/)?([0-9]+)/;
     const vimeoMatch = url.match(vimeoRegex);
     if (vimeoMatch) {
       const videoId = vimeoMatch[1];
