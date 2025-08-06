@@ -9,9 +9,10 @@ import { courseService } from "@/services/api/courseService";
 import { toast } from "react-toastify";
 const MembershipPage = () => {
   const [showModal, setShowModal] = useState(false);
-  const [formData, setFormData] = useState({
+const [formData, setFormData] = useState({
     title: "",
     description: "",
+    thumbnail: "",
     videoUrl: "",
     courseId: null,
     duration: 30,
@@ -58,22 +59,21 @@ const convertToEmbedUrl = (url) => {
     try {
       setLoading(true);
       
-      // Get or create a membership course
+// Get or create a membership course
       let membershipCourses = await courseService.getByAccessLevel("membership");
       let courseId;
       
       if (membershipCourses.length === 0) {
-        // Create default membership course
+        // Create default membership course with proper thumbnail
         const newCourse = await courseService.create({
           title: "멤버십 강의",
           description: "멤버십 전용 강의 모음",
-          instructor: "관리자",
           accessLevel: "membership",
           category: "membership",
-          thumbnail: "/api/placeholder/400/225",
-          price: 0,
-          rating: 5.0,
-          students: 0
+          thumbnail: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=450&fit=crop",
+          videoUrl: embedUrl,
+          duration: parseInt(formData.duration) || 30,
+          lectureCount: 1
         });
         courseId = newCourse.Id;
       } else {
@@ -82,18 +82,19 @@ const convertToEmbedUrl = (url) => {
 
       const embedUrl = convertToEmbedUrl(formData.videoUrl);
       
-      await lectureService.create({
+await lectureService.create({
         ...formData,
         courseId: courseId,
         videoUrl: embedUrl,
-        thumbnail: "/api/placeholder/400/225"
+        thumbnail: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=450&fit=crop"
       });
 
       toast.success("강의가 성공적으로 등록되었습니다!");
       setShowModal(false);
-      setFormData({
+setFormData({
         title: "",
         description: "",
+        thumbnail: "",
         videoUrl: "",
         courseId: null,
         duration: 30,
